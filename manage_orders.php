@@ -82,16 +82,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
     <main>
         <form action="manage_orders.php" method="POST">
-        <section>
-            <h2>Type of Work</h2>
+            <section>
+                <h2>Type of Work</h2>
                 <label><input type="radio" name="type" value="Partial" checked> Partial Denture</label>
                 <label><input type="radio" name="type" value="Full"> Full Denture</label>
             </section>
-            <button type="submit">Finalize Order</button>
             <section id="materialsSection">
                 <h2>Materials</h2>
-                <!-- Materials options will be filled based on the selection of type of work -->
-            </section>
+        </section>
+            <button type="submit">Finalize Order</button>
             <section>
                 <h2>Price</h2>
                 <p id="price">Select a type and material to see price.</p>
