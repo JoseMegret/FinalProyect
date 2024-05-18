@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <h1> Testing </h1>
         <div class="logo">
             <h1>Joy Dental</h1>
         </div>
