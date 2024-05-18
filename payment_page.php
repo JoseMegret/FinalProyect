@@ -42,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="cardNumber" name="cardNumber" required>
             
             <label for="expMonth">Expiry Month:</label>
-            <input type="text" id="expMonth" name="expMonth" required>
+            <input type="date" id="expMonth" name="expMonth" required>
 
             <label for="expYear">Expiry Year:</label>
-            <input type="text" id="expYear" name="expYear" required>
+            <input type="date" id="expYear" name="expYear" required>
             
             <label for="cvv">CVV:</label>
             <input type="text" id="cvv" name="cvv" required>
