@@ -71,9 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="view_orders.php">View Order</a></li>
-                <li><a href="login.php">Log In</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
                 <li><a href="payment_page.php">Payment Page</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>
     </header>
