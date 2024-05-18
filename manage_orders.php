@@ -81,13 +81,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="manage_orders.php" method="POST">
             <section>
                 <h2>Type of Work</h2>
-                <label><input type="radio" name="type" value="Partial" checked> Partial Denture</label>
-                <label><input type="radio" name="type" value="Full"> Full Denture</label>
+                <label><input type="radio" name="type" value="Partial" onclick="updateMaterials('Partial');" checked> Partial Denture</label>
+                <label><input type="radio" name="type" value="Full" onclick="updateMaterials('Full');"> Full Denture</label>
             </section>
             <section id="materialsSection">
                 <h2>Materials</h2>
-        </section>
-            <button type="submit">Finalize Order</button>
+                <!-- Materials options will be filled by the script -->
+            </section>
             <section>
                 <h2>Price</h2>
                 <p id="price">Select a type and material to see price.</p>
@@ -110,25 +110,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Contact us at (787)-607-4477 | email: megretdental@gmail.com</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            updateMaterials(document.querySelector('input[name="type"]:checked').value);
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Trigger update on initial load based on the default checked radio button.
+        updateMaterials(document.querySelector('input[name="type"]:checked').value);
+    });
 
-        function updateMaterials(type) {
-            let materialsHtml = '';
-            if (type === 'Partial') {
-                materialsHtml += '<label><input type="radio" name="material" value="Metal" onchange="updatePrice(550);"> Metal (chrome cobalt)</label>';
-                materialsHtml += '<label><input type="radio" name="material" value="Nilon" onchange="updatePrice(550);"> Nilon (Flexible)</label>';
-            } else if (type === 'Full') {
-                materialsHtml += '<label><input type="radio" name="material" value="Acrylic" onchange="updatePrice(500);"> Acrylic (rigid)</label>';
-            }
-            document.getElementById('materialsSection').innerHTML = materialsHtml;
-            updatePrice(type === 'Partial' ? 550 : 500);
+    function updateMaterials(type) {
+        let materialsHtml = '';
+        let price = 0;
+
+        if (type === 'Partial') {
+            materialsHtml += '<label><input type="radio" name="material" value="Metal" checked onchange="updatePrice(550);"> Metal (chrome cobalt)</label>';
+            materialsHtml += '<label><input type="radio" name="material" value="Nilon" onchange="updatePrice(550);"> Nilon (Flexible)</label>';
+            price = 550; // Price for Partial Denture
+        } else if (type === 'Full') {
+            materialsHtml += '<label><input type="radio" name="material" value="Acrylic" checked onchange="updatePrice(500);"> Acrylic (rigid)</label>';
+            price = 500; // Price for Full Denture
         }
 
-        function updatePrice(price) {
-            document.getElementById('price').textContent = 'Price: $' + price;
-        }
-    </script>
+        document.getElementById('materialsSection').innerHTML = materialsHtml;
+        updatePrice(price); // Update the price based on the type of denture selected
+    }
+
+    function updatePrice(price) {
+        document.getElementById('price').textContent = 'Price: $' + price;
+    }
+</script>
 </body>
 </html>
