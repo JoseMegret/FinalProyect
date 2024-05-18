@@ -8,10 +8,9 @@ if (!isset($_SESSION['user_id']) || !$_SESSION['logged_in']) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $type = trim($_POST['type']);  // Use trim to remove any whitespace
-    $material = $_POST['material'];
+    $type = trim($_POST['type']); // Trim any whitespace
 
-    // Retrieve the denture_id for the selected type
+    // Check if the denture type exists in the database
     $stmt = $conn->prepare("SELECT denture_id FROM Dentures WHERE type = ?");
     $stmt->bind_param("s", $type);
     $stmt->execute();
@@ -83,11 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
     <main>
         <form action="manage_orders.php" method="POST">
-            <section>
-                <h2>Type of Work</h2>
-                <label><input type="radio" name="type" value="Partial" onclick="updateMaterials('Partial');" checked> Partial Denture</label>
-                <label><input type="radio" name="type" value="Full" onclick="updateMaterials('Full');"> Full Denture</label>
+        <section>
+            <h2>Type of Work</h2>
+                <label><input type="radio" name="type" value="Partial" checked> Partial Denture</label>
+                <label><input type="radio" name="type" value="Full"> Full Denture</label>
             </section>
+            <button type="submit">Finalize Order</button>
             <section id="materialsSection">
                 <h2>Materials</h2>
                 <!-- Materials options will be filled based on the selection of type of work -->
@@ -114,6 +114,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Contact us at (787)-607-4477 | email: megretdental@gmail.com</p>
     </footer>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateMaterials(document.querySelector('input[name="type"]:checked').value);
+        });
+
         function updateMaterials(type) {
             let materialsHtml = '';
             if (type === 'Partial') {
@@ -123,13 +127,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 materialsHtml += '<label><input type="radio" name="material" value="Acrylic" onchange="updatePrice(500);"> Acrylic (rigid)</label>';
             }
             document.getElementById('materialsSection').innerHTML = materialsHtml;
-            updatePrice(type === 'Partial' ? 550 : 500);  // Default price based on type
+            updatePrice(type === 'Partial' ? 550 : 500);
         }
-
-        // Initialize the materials section based on the default checked type
-        document.addEventListener('DOMContentLoaded', function() {
-            updateMaterials(document.querySelector('input[name="type"]:checked').value);
-        });
 
         function updatePrice(price) {
             document.getElementById('price').textContent = 'Price: $' + price;
