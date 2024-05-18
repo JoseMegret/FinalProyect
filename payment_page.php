@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="manage_orders.php">Manage Orders</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>
     </header>
