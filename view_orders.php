@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $patient_id = $_SESSION['user_id'];
 
 // Retrieve orders for the logged-in user
-$stmt = $conn->prepare("SELECT o.order_id, d.type, m.name as material, o.due_date, o.status, o.price 
+$stmt = $conn->prepare("SELECT o.order_id, d.type, m.name as material, o.due_date, o.status, m.cost 
                         FROM Orders o 
                         JOIN Dentures d ON o.denture_id = d.denture_id
                         JOIN Materials m ON o.material_id = m.material_id
