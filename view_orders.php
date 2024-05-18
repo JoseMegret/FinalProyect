@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $patient_id = $_SESSION['user_id'];
 
 // Retrieve orders for the logged-in user
-$stmt = $conn->prepare("SELECT o.order_id, d.type, m.name as material, o.due_date, o.status, m.cost 
+$stmt = $conn->prepare("SELECT o.order_id, d.type, m.name as material, m.cost, o.due_date, o.status 
                         FROM Orders o 
                         JOIN Dentures d ON o.denture_id = d.denture_id
                         JOIN Materials m ON o.material_id = m.material_id
@@ -31,7 +31,7 @@ while ($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Orders - Joy Dental</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -51,16 +51,16 @@ while ($row = $result->fetch_assoc()) {
             <p>No orders found!</p>
         <?php else: ?>
             <div class="orders-container">
-                <?php foreach ($orders as $order): ?>
-                    <div class="order-box">
-                        <p><strong>Order ID:</strong> <?= htmlspecialchars($order['order_id']) ?></p>
-                        <p><strong>Type:</strong> <?= htmlspecialchars($order['type']) ?></p>
-                        <p><strong>Material:</strong> <?= htmlspecialchars($order['material']) ?></p>
-                        <p><strong>Due Date:</strong> <?= htmlspecialchars($order['due_date']) ?></p>
-                        <p><strong>Status:</strong> <?= htmlspecialchars($order['status']) ?></p>
-                        <p><strong>Price:</strong> $<?= htmlspecialchars(number_format($order['price'], 2)) ?></p>
-                    </div>
-                <?php endforeach; ?>
+            <?php foreach ($orders as $order): ?>
+                <div class="order-box">
+                    <p><strong>Order ID:</strong> <?= htmlspecialchars($order['order_id']) ?></p>
+                    <p><strong>Type:</strong> <?= htmlspecialchars($order['type']) ?></p>
+                    <p><strong>Material:</strong> <?= htmlspecialchars($order['material']) ?></p>
+                    <p><strong>Price:</strong> $<?= htmlspecialchars(number_format($order['cost'], 2)) ?></p>
+                    <p><strong>Due Date:</strong> <?= htmlspecialchars($order['due_date']) ?></p>
+                    <p><strong>Status:</strong> <?= htmlspecialchars($order['status']) ?></p>
+                </div>
+            <?php endforeach; ?>
             </div>
         <?php endif; ?>
     </main>
