@@ -18,3 +18,18 @@ These instructions will get you a copy of the project up and running on your loc
 - PHP 7.4 or higher
 - MySQL 5.7 or higher
 - Apache 2.4 or higher (or another compatible server)
+
+Access the application
+- Open your web browser and navigate to [http://localhost/ or whichever URL your local server uses.
+](https://ada.uprrp.edu/~jose.megret/FinalProyect/index.php)
+
+Usage
+
+	•	Home Page: Start by visiting the home page where you can either log in or sign up.
+	•	Manage Orders: Once logged in, navigate to Manage Orders to create or modify your denture orders.
+	•	View Orders: Check the details of your existing orders.
+	•	Payment Page: Proceed to the payment page to finalize your orders.
+
+Authors
+
+	•	José A. Megret - Initial work - JoseMegret
