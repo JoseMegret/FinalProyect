@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,19 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Payment Information</h2>
         <form action="payment_page.php" method="POST">
             <label for="cardName">Name on Card:</label>
-            <input type="text" id="cardName" name="cardName" required>
+            <input type="text" id="cardName" name="cardName" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" required>
             
             <label for="cardNumber">Card Number:</label>
-            <input type="text" id="cardNumber" name="cardNumber" required>
+            <input type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" title="Card number must be 16 digits" required>
             
             <label for="expMonth">Expiry Month:</label>
-            <input type="text" id="expMonth" name="expMonth" required>
+            <input type="text" id="expMonth" name="expMonth" pattern="(0[1-9]|1[0-2])" title="Enter a valid month (01 to 12)" required>
 
             <label for="expYear">Expiry Year:</label>
-            <input type="text" id="expYear" name="expYear" required>
+            <input type="text" id="expYear" name="expYear" pattern="\d{4}" title="Enter a valid 4-digit year" required>
             
             <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required>
+            <input type="text" id="cvv" name="cvv" pattern="\d{3}" title="CVV must be 3 digits" required>
             
             <button type="submit">Submit Payment</button>
         </form>
