@@ -85,7 +85,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </section>
             <section id="materialsSection">
                 <h2>Materials</h2>
-                <!-- Materials options will be filled by the script -->
             </section>
             <section>
                 <h2>Price</h2>
