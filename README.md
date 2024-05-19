@@ -19,11 +19,11 @@ These instructions will get you a copy of the project up and running on your loc
 - MySQL 5.7 or higher
 - Apache 2.4 or higher (or another compatible server)
 
-Access the application
+## Access the application
 - Open your web browser and navigate to [https://ada.uprrp.edu/~jose.megret/FinalProyect/index.php.
 ](https://ada.uprrp.edu/~jose.megret/FinalProyect/index.php)
 
-Usage
+## Usage
 
 	•	Home Page: Start by visiting the home page where you can either log in or sign up.
 	•	Manage Orders: Once logged in, navigate to Manage Orders to create or modify your denture orders.
