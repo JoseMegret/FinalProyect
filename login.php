@@ -37,36 +37,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In - Joy Dental</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <header>
         <div class="logo"><h1>Joy Dental</h1></div>
         <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="signup.php">Sign Up</a></li>
-        </ul>
-    </nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="signup.php">Sign Up</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <h2>Log In</h2>
-        <form action="login.php" method="POST">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Log In</button>
-        </form>
+        <div class="form-container">
+            <h2>Log In</h2>
+            <form action="login.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Contact us at (787)-607-4477 | email: megretdental@gmail.com</p>
     </footer>
 </body>
 </html>
-
