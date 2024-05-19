@@ -30,9 +30,9 @@ Usage
 	•	View Orders: Check the details of your existing orders.
 	•	Payment Page: Proceed to the payment page to finalize your orders.
 
-## Authors
+## Author
 
-- **[Your Full Name]** - *Initial work* - [JoseMegret]([https://github.com/yourusername](https://github.com/JoseMegret/FinalProyect))
+- **[José A. Megret Bonilla]** - *Initial work* - [JoseMegret]([https://github.com/yourusername](https://github.com/JoseMegret/FinalProyect))
 
 ### Initial Work Description:
 - **Project Creator**: Conceptualized and developed the 'Joy Dental Application', a comprehensive system for managing dental service orders.
