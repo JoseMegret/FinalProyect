@@ -42,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,21 +61,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </nav>
     </header>
     <main>
-        <h2>Create Account</h2>
-        <form action="signup.php" method="POST">
-            <input type="text" name="first_name" placeholder="First Name" required>
-            <input type="text" name="last_name" placeholder="Last Name" required>
-            <input type="date" name="date_of_birth" required>
-            <input type="text" name="phone_number" placeholder="Phone Number" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-            <button type="submit">Create Account</button>
-        </form>
+        <div class="form-container">
+            <h2>Create Account</h2>
+            <form action="signup.php" method="POST">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="date" name="date_of_birth" required>
+                <input type="text" name="phone_number" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Contact us at (787)-607-4477 | email: megretdental@gmail.com</p>
     </footer>
 </body>
 </html>
-
