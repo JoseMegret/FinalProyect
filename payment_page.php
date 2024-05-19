@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Joy Dental</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <header>
@@ -43,10 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="cardNumber" name="cardNumber" required>
             
             <label for="expMonth">Expiry Month:</label>
-            <input type="month" id="expMonth" name="expMonth" required>
+            <input type="text" id="expMonth" name="expMonth" required>
 
             <label for="expYear">Expiry Year:</label>
-            <input type="year" id="expYear" name="expYear" required>
+            <input type="text" id="expYear" name="expYear" required>
             
             <label for="cvv">CVV:</label>
             <input type="text" id="cvv" name="cvv" required>
