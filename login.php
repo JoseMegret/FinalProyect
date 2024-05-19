@@ -45,6 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In - Joy Dental</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        p{
+            margin-top: 300px;
+        }
+    </style>    
 </head>
 <body>
     <header>
@@ -58,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
     <main>
         <h2>Log In</h2>
-        <form action="login.php" method="POST">
+        <form align="center" action="login.php" method="POST">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Log In</button>
