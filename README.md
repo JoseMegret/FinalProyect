@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 - Apache 2.4 or higher (or another compatible server)
 
 Access the application
-- Open your web browser and navigate to [http://localhost/ or whichever URL your local server uses.
+- Open your web browser and navigate to [https://ada.uprrp.edu/~jose.megret/FinalProyect/index.php.
 ](https://ada.uprrp.edu/~jose.megret/FinalProyect/index.php)
 
 Usage
