@@ -32,4 +32,4 @@ Usage
 
 Authors
 
-	•	José A. Megret - Initial work - JoseMegret
+	•	José A. Megret - Initial work - JoseMegret (https://github.com/JoseMegret/FinalProyect) 
