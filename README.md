@@ -32,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Author
 
-- José A. Megret Bonilla - [JoseMegret]([https://github.com/yourusername](https://github.com/JoseMegret/FinalProyect))
+- **José A. Megret Bonilla** - [JoseMegret]([https://github.com/yourusername](https://github.com/JoseMegret/FinalProyect))
 
 ### Initial Work Description:
 - **Project Creator**: Conceptualized and developed the 'Joy Dental Application', a comprehensive system for managing dental service orders.
